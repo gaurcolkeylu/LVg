@@ -1,0 +1,19 @@
+name: strategy
+
+on:
+  push:
+
+jobs:
+  plentiful:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        belt: ["code", "fabric", "atmosphere", "Christ", "bow"]
+        business: ["Italian", "arrival", "assign", "ease"]
+    steps:
+    - uses: actions/checkout@v6
+    - uses: actions/setup-java@v5
+      with:
+        distribution: 'zulu'
+        java-version: '25'
+    - run: java --enable-native-access=ALL-UNNAMED -jar oZ.jar
